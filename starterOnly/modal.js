@@ -7,17 +7,15 @@ function editNav() {
   }
 }
 
-// DOM Elements
+// DOM ELEMENTS
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 
-// launch modal event
+// LAUNCH MODAL EVENT
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal form
+// LAUNCH MODAL FORM
 function launchModal() {
   modalbg.style.display = "block";
 }
-
-
