@@ -130,7 +130,7 @@
             <!-- ++++++++++++++++++++++++    DEBUT BALISE FORM DES INPUTS   ++++++++++++++++++++++++ -->
 
             <form
-              id="myForm"
+              id="form"
               name="reserve"
               action="index.html"
               method="get"
@@ -138,65 +138,49 @@
             >
               <!-- ++++++++++++++++++++++++    INPUT PRENOM   ++++++++++++++++++++++++ -->
 
-              <div class="formData">
+              <div class="form-control">
                 <label>First name</label><br />
-                <input
-                  class="text-control"
-                  type="text"
-                  id="first"
-                  name="first"
-                  minlength="2"
-                /><br />
+                <input class="text-control" type="text" id="first" /><br />
+                <small>Error message</small>
               </div>
 
               <!-- ++++++++++++++++++++++++    INPUT NOM   ++++++++++++++++++++++++ -->
 
-              <div class="formData">
+              <div class="form-control">
                 <label>Last name</label><br />
-                <input
-                  class="text-control"
-                  type="text"
-                  id="last"
-                  name="last"
-                /><br />
+                <input class="text-control" type="text" id="last" /><br />
+                <small>Error message</small>
               </div>
 
               <!-- ++++++++++++++++++++++++    INPUT EMAIL   ++++++++++++++++++++++++ -->
 
-              <div class="formData">
+              <div class="form-control">
                 <label>Email</label><br />
-                <input
-                  class="text-control"
-                  type="email"
-                  id="email"
-                  name="email"
-                /><br />
+                <input class="text-control" type="text" id="email" /><br />
+                <small>Error message</small>
               </div>
 
               <!-- ++++++++++++++++++++++++    INPUT DATE DE NAISSANCE   ++++++++++++++++++++++++ -->
 
-              <div class="formData">
+              <div class="form-control">
                 <label>Birthdate</label><br />
-                <input
-                  class="text-control"
-                  type="date"
-                  id="birthdate"
-                  name="birthdate"
-                /><br />
+                <input class="text-control" type="date" id="birthdate" /><br />
+                <small>Error message</small>
               </div>
 
               <!-- ++++++++++++++++++++++++    NOMBRE DE TOURNOIS   ++++++++++++++++++++++++ -->
 
-              <div class="formData">
+              <div class="form-control">
                 <label>How many tournaments have you attended ?</label><br />
                 <input
                   type="number"
                   class="text-control"
-                  id="quantity"
+                  id="tournaments"
                   name="quantity"
                   min="0"
                   max="99"
                 />
+                <small>Error message</small>
               </div>
 
               <!-- ++++++++++++++++++++++++    PARAGRAPHE QUELLES VILLES   ++++++++++++++++++++++++ -->
@@ -205,7 +189,7 @@
 
               <!-- ++++++++++++++++++++++++    DEBUT DU CONTAINER RADIO VILLES   ++++++++++++++++++++++++ -->
 
-              <div class="formData">
+              <div class="form-control">
                 <!-- ++++++++++++++++++++++++        NEW YORK   ++++++++++++++++++++++++ -->
 
                 <input
@@ -289,13 +273,13 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-
+                <small>Error message</small>
                 <!-- ++++++++++++++++++++++++        FIN DU CONTAINER RADIO VILLES   ++++++++++++++++++++++++ -->
               </div>
 
               <!-- ++++++++++++++++++++++++    DEBUT DU CONTAINER CONDITIONS D'UTILISATEURS + NEWSLETTER   ++++++++++++++++++++++++ -->
 
-              <div class="formData">
+              <div class="form-control">
                 <!-- ++++++++++++++++++++++++    CASE DE VALIDATION 1  HIDDEN   ++++++++++++++++++++++++ -->
                 <input
                   class="checkbox-input"
@@ -345,7 +329,7 @@
 
               <!-- ++++++++++++++++++++++++    SUBMIT BUTTON   ++++++++++++++++++++++++ -->
 
-              <input class="btn-submit" type="submit" value="Go" />
+              <button class="btn-submit">Go</button>
 
               <!-- ++++++++++++++++++++++++    FIN BALISE FORM DES INPUTS   ++++++++++++++++++++++++ -->
             </form>
