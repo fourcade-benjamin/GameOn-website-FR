@@ -683,3 +683,25 @@ footer {
     opacity: 1;
   }
 }
+
+/* onsubmit="return validate();" */
+
+/*    ---------------------------   JAVA FORM   ---------------------------   */
+
+.form-control small {
+  visibility: hidden;
+  font-size: 0.7em;
+  font-weight: normal;
+}
+
+.form-control.success input {
+  border-color: rgb(3, 240, 15);
+}
+.form-control.error small {
+  visibility: visible;
+  color: red;
+}
+
+.form-control.error input {
+  border-color: red;
+}
