@@ -122,7 +122,7 @@
         <div class="content">
           <!-- ++++++++++++++++++++++++    SPAN = CROIX POUR FERMER LA FENETRE   ++++++++++++++++++++++++ -->
 
-          <span class="close"></span>
+          <span id="closer" class="close"></span>
 
           <!-- ++++++++++++++++++++++++    DEBUT DU CONTAINER QUI ENTOURE LES INPUTS = MODAL-BODY   ++++++++++++++++++++++++ -->
 
@@ -134,7 +134,7 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="return  validate();"
             >
               <!-- ++++++++++++++++++++++++    INPUT PRENOM   ++++++++++++++++++++++++ -->
 
@@ -273,7 +273,8 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-                <small>Error message</small>
+                <br />
+                <small id="rad"></small>
                 <!-- ++++++++++++++++++++++++        FIN DU CONTAINER RADIO VILLES   ++++++++++++++++++++++++ -->
               </div>
 
@@ -299,9 +300,9 @@
 
                   I have read and accept the terms of use.
                 </label>
-
+                <br />
                 <!-- ++++++++++++++++++++++++    PASSAGE A LA LIGNE ?   ++++++++++++++++++++++++ -->
-
+                <small id="term"></small>
                 <br />
 
                 <!-- ++++++++++++++++++++++++    CASE DE VALIDATION 2 HIDDEN   ++++++++++++++++++++++++ -->
@@ -329,7 +330,7 @@
 
               <!-- ++++++++++++++++++++++++    SUBMIT BUTTON   ++++++++++++++++++++++++ -->
 
-              <button class="btn-submit">Go</button>
+              <input id="tst" type="submit" class="btn-submit" value="go" />
 
               <!-- ++++++++++++++++++++++++    FIN BALISE FORM DES INPUTS   ++++++++++++++++++++++++ -->
             </form>

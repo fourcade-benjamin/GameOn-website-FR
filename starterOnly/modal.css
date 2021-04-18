@@ -705,3 +705,13 @@ footer {
 .form-control.error input {
   border-color: red;
 }
+
+#rad {
+  visibility: visible;
+  color: red;
+}
+
+#term {
+  visibility: visible;
+  color: red;
+}

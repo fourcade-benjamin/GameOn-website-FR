@@ -20,26 +20,16 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-/*//INPUT
+//CLOSE
+let closer = document.getElementById("closer");
 
-const first = document.getElementById("first");
-const last = document.getElementById("last");
-const email = document.getElementById("email");
+//
 
-modalbg.addEventListener("submit", (e) => {
-  checkInputs();
-});
+closer.onclick = function () {
+  modalbg.style.display = "none";
+};
 
-function checkInputs() {
-  const firstValue = first.value.trim();
-  const lastValue = last.value.trim();
-  const emailValue = email.value.trim();
-
-  if (first === "") {
-    console.log();
-  }
-}
-*/
+//
 
 // FORM
 
@@ -50,20 +40,111 @@ const email = document.getElementById("email");
 const birthdate = document.getElementById("birthdate");
 const tournaments = document.getElementById("tournaments");
 const checkbox = document.getElementById("checkbox1");
+const test = document.getElementById("tst");
 
-form.addEventListener("submit", (e) => {
+/*form.addEventListener("submit", (e) => {
   e.preventDefault();
   checkInputs();
-});
+});*/
 
-function checkInputs() {
+validate();
+function validate() {
+  const firstValue = first.value.trim();
+  const emailValue = email.value.trim();
+  const lastValue = last.value.trim();
+  const birthdateValue = birthdate.value.trim();
+  const tournamentsValue = tournaments.value.trim();
+  //
+  if (firstValue === "") {
+    //show error
+    //add error class
+    setErrorFor(first, "username cant be blank");
+    return false;
+  } else if (firstValue.length < 2) {
+    setErrorFor(first, "username with 2 letters");
+    return false;
+  } else {
+    //succes class
+    setSuccessFor(first);
+  }
+  //
+  if (lastValue === "") {
+    //show error
+    //add error class
+    setErrorFor(last, "Last name cant be blank");
+    return false;
+  } else if (lastValue.length < 2) {
+    setErrorFor(last, "username with 2 letters");
+    return false;
+  } else {
+    //succes class
+    setSuccessFor(last);
+  }
+  //
+  if (emailValue === "") {
+    //show error
+    //add error class
+    setErrorFor(email, "email cant be blank");
+    return false;
+  } else if (!isEmail(emailValue)) {
+    setErrorFor(email, "email is not valide");
+    return false;
+  } else {
+    //succes class
+    setSuccessFor(email);
+  }
+  //
+  if (birthdateValue === "") {
+    //show error
+    //add error class
+    setErrorFor(birthdate, "select your birthdate");
+    return false;
+  } else {
+    //succes class
+    setSuccessFor(birthdate);
+  }
+  //
+  if (tournamentsValue === "") {
+    //show error
+    //add error class
+    setErrorFor(tournaments, "select a number");
+    return false;
+  } else {
+    //succes class
+    setSuccessFor(tournaments);
+  }
+  //
+  let radio = document.getElementsByName("location");
+  let ischecked_method = false;
+  for (let i = 0; i < radio.length; i++) {
+    if (radio[i].checked) {
+      ischecked_method = true;
+      document.getElementById("rad").innerHTML = "";
+      break;
+    } else {
+      //payment method button is not checked
+      document.getElementById("rad").innerHTML = "select your location";
+      return false;
+    }
+  }
+  //
+  if (!checkbox.checked) {
+    document.getElementById("term").innerHTML = "accept the terms";
+    return false;
+  } else {
+    document.getElementById("term").innerHTML = "";
+  }
+  //
+  alert("ok");
+}
+
+/*function checkInputs() {
   // get the values from the inputs
   const firstValue = first.value.trim();
   const emailValue = email.value.trim();
   const lastValue = last.value.trim();
   const birthdateValue = birthdate.value.trim();
   const tournamentsValue = tournaments.value.trim();
-  const checkboxValue = checkbox1.value;
 
   if (firstValue === "") {
     //show error
@@ -125,12 +206,25 @@ function checkInputs() {
     setSuccessFor(birthdate);
   }
 
-  if (checkboxValue === "") {
-    //show error
-    //add error class
-    setErrorFor(checkbox1, "select your location");
+  let radio = document.getElementsByName("location");
+  let ischecked_method = false;
+  for (let i = 0; i < radio.length; i++) {
+    if (radio[i].checked) {
+      ischecked_method = true;
+      document.getElementById("rad").innerHTML = "";
+      break;
+    } else {
+      //payment method button is not checked
+      document.getElementById("rad").innerHTML = "select your location";
+    }
   }
-}
+
+  if (!checkbox.checked) {
+    document.getElementById("term").innerHTML = "accept the terms";
+  } else {
+    document.getElementById("term").innerHTML = "";
+  }
+}*/
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement; // .form-control
@@ -152,3 +246,5 @@ function isEmail(email) {
     email
   );
 }
+
+//  RADIO onsubmit="return validate();"
