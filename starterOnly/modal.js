@@ -40,7 +40,6 @@ const email = document.getElementById("email");
 const birthdate = document.getElementById("birthdate");
 const tournaments = document.getElementById("tournaments");
 const checkbox = document.getElementById("checkbox1");
-const test = document.getElementById("tst");
 
 /*form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -114,7 +113,7 @@ function validate() {
     setSuccessFor(tournaments);
   }
   //
-  let radio = document.getElementsByName("location");
+  /*let radio = document.getElementsByClassName("checkbox-input");
   let ischecked_method = false;
   for (let i = 0; i < radio.length; i++) {
     if (radio[i].checked) {
@@ -126,7 +125,19 @@ function validate() {
       document.getElementById("rad").innerHTML = "select your location";
       return false;
     }
+  }*/
+  var radio = document.querySelector('input[name = "location"]:checked');
+
+  if (radio != null) {
+    document.getElementById("rad").innerHTML = "";
+    //Test if something was checked
+  } else {
+    document.getElementById("rad").innerHTML = "select your location";
+    return false;
   }
+
+  //
+
   //
   if (!checkbox.checked) {
     document.getElementById("term").innerHTML = "accept the terms";
@@ -134,7 +145,6 @@ function validate() {
   } else {
     document.getElementById("term").innerHTML = "";
   }
-  //
   alert("ok");
 }
 
