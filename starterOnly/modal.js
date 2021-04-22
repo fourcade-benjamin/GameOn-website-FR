@@ -145,7 +145,7 @@ function validate() {
   } else {
     document.getElementById("term").innerHTML = "";
   }
-  alert("ok");
+  alert("ok test gitkraken");
 }
 
 /*function checkInputs() {
