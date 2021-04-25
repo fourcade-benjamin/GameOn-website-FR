@@ -1,3 +1,5 @@
+//    RESPONSIVE
+
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -7,31 +9,31 @@ function editNav() {
   }
 }
 
-// DOM ELEMENTS
+//    DOM ELEMENTS
+
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 
-// LAUNCH MODAL EVENT
+//    LAUNCH MODAL EVENT
+
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// LAUNCH MODAL FORM
+//    LAUNCH MODAL FORM
+
 function launchModal() {
   modalbg.style.display = "block";
 }
 
-//CLOSE
-let closer = document.getElementById("closer");
+//    CLOSE
 
-//
+let closer = document.getElementById("closer");
 
 closer.onclick = function () {
   modalbg.style.display = "none";
 };
 
-//
-
-// FORM
+//    FORM_CONST
 
 const form = document.getElementById("form");
 const first = document.getElementById("first");
@@ -41,10 +43,7 @@ const birthdate = document.getElementById("birthdate");
 const tournaments = document.getElementById("tournaments");
 const checkbox = document.getElementById("checkbox1");
 
-/*form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkInputs();
-});*/
+//    FORM_FUNCTION
 
 validate();
 function validate() {
@@ -53,208 +52,157 @@ function validate() {
   const lastValue = last.value.trim();
   const birthdateValue = birthdate.value.trim();
   const tournamentsValue = tournaments.value.trim();
-  //
+
+
+  //    FIRSTNAME
+
+
   if (firstValue === "") {
-    //show error
-    //add error class
-    setErrorFor(first, "username cant be blank");
+
+    //  BLANK
+    setErrorFor(first)
+    document.getElementById("firstNameError").innerHTML = " This field can't be empty ";
     return false;
+    //  ERROR 2 LETTERS
   } else if (firstValue.length < 2) {
-    setErrorFor(first, "username with 2 letters");
+    setErrorFor(first);
+    document.getElementById("firstNameError").innerHTML = "Please enter at least two letters ";
     return false;
+    //  SUCCESS
   } else {
-    //succes class
     setSuccessFor(first);
+    document.getElementById("firstNameError").innerHTML = "";
   }
-  //
+
+
+  //    LASTNAME
+
+
   if (lastValue === "") {
-    //show error
-    //add error class
-    setErrorFor(last, "Last name cant be blank");
+    //    BLANK
+    setErrorFor(last);
+    document.getElementById("lastNameError").innerHTML = " This field can't be empty ";
     return false;
+    //    ERROR 2 LETTERS
   } else if (lastValue.length < 2) {
-    setErrorFor(last, "username with 2 letters");
+    setErrorFor(last);
+    document.getElementById("lastNameError").innerHTML = "Please enter at least two letters ";
     return false;
   } else {
-    //succes class
+    //    SUCCESS
     setSuccessFor(last);
+    document.getElementById("lastNameError").innerHTML = "";
   }
-  //
+
+
+  //    EMAIL
+
+
   if (emailValue === "") {
-    //show error
-    //add error class
-    setErrorFor(email, "email cant be blank");
+    //    BLANK
+    setErrorFor(email);
+    document.getElementById("emailError").innerHTML = " This field can't be empty ";
     return false;
+    //    INVALIDE EMAIL
   } else if (!isEmail(emailValue)) {
-    setErrorFor(email, "email is not valide");
+    setErrorFor(email);
+    document.getElementById("emailError").innerHTML = "Your email is invalide. Ex: gameon@mail.net";
     return false;
   } else {
     //succes class
     setSuccessFor(email);
+    document.getElementById("emailError").innerHTML = "";
   }
-  //
-  if (birthdateValue === "") {
-    //show error
-    //add error class
-    setErrorFor(birthdate, "select your birthdate");
-    return false;
-  } else {
-    //succes class
-    setSuccessFor(birthdate);
-  }
-  //
-  if (tournamentsValue === "") {
-    //show error
-    //add error class
-    setErrorFor(tournaments, "select a number");
-    return false;
-  } else {
-    //succes class
-    setSuccessFor(tournaments);
-  }
-  //
-  /*let radio = document.getElementsByClassName("checkbox-input");
-  let ischecked_method = false;
-  for (let i = 0; i < radio.length; i++) {
-    if (radio[i].checked) {
-      ischecked_method = true;
-      document.getElementById("rad").innerHTML = "";
-      break;
-    } else {
-      //payment method button is not checked
-      document.getElementById("rad").innerHTML = "select your location";
-      return false;
-    }
-  }*/
-  var radio = document.querySelector('input[name = "location"]:checked');
 
+
+  //    BIRTHDATE
+
+
+  if (birthdateValue === "") {
+    //    ERROR
+    setErrorFor(birthdate);
+    document.getElementById("birthdateError").innerHTML = "Please select your birthdate";
+    return false;
+  } else {
+    //    SUCCESS
+    setSuccessFor(birthdate);
+    document.getElementById("birthdateError").innerHTML = "";
+  }
+
+
+  //    TOURNAMENTS
+
+
+  if (tournamentsValue === "") {
+    //    ERROR
+    setErrorFor(tournaments);
+    document.getElementById("tournamentError").innerHTML = "Please select a number between 0 and 99";
+    return false;
+  } else {
+    //    SUCCESS
+    setSuccessFor(tournaments);
+    document.getElementById("tournamentError").innerHTML = "";
+  }
+
+
+  //    LOCATION
+
+
+  var radio = document.querySelector('input[name = "location"]:checked');
+    //    SUCCESS
   if (radio != null) {
     document.getElementById("rad").innerHTML = "";
-    //Test if something was checked
+    //    ERROR
   } else {
-    document.getElementById("rad").innerHTML = "select your location";
+    document.getElementById("rad").innerHTML = "Please select your location";
     return false;
   }
 
-  //
 
-  //
+  //    TERMS
+
+
   if (!checkbox.checked) {
-    document.getElementById("term").innerHTML = "accept the terms";
+    //    ERROR
+    document.getElementById("term").innerHTML = "Please read and accept the terms of use. Newsletter is optionnal";
     return false;
+    //    SUCCESS
   } else {
     document.getElementById("term").innerHTML = "";
   }
+
+
+  //    THANKS 
+
+
   alert("ok test gitkraken");
 }
 
-/*function checkInputs() {
-  // get the values from the inputs
-  const firstValue = first.value.trim();
-  const emailValue = email.value.trim();
-  const lastValue = last.value.trim();
-  const birthdateValue = birthdate.value.trim();
-  const tournamentsValue = tournaments.value.trim();
 
-  if (firstValue === "") {
-    //show error
-    //add error class
-    setErrorFor(first, "username cant be blank");
-  } else if (firstValue.length < 2) {
-    setErrorFor(first, "username with 2 letters");
-  } else {
-    //succes class
-    setSuccessFor(first);
-  }
+//    ERROR  
 
-  if (lastValue === "") {
-    //show error
-    //add error class
-    setErrorFor(last, "Last name cant be blank");
-  } else if (lastValue.length < 2) {
-    setErrorFor(last, "username with 2 letters");
-  } else {
-    //succes class
-    setSuccessFor(last);
-  }
 
-  if (emailValue === "") {
-    //show error
-    //add error class
-    setErrorFor(email, "email cant be blank");
-  } else if (!isEmail(emailValue)) {
-    setErrorFor(email, "email is not valide");
-  } else {
-    //succes class
-    setSuccessFor(email);
-  }
-
-  if (birthdateValue === "") {
-    //show error
-    //add error class
-    setErrorFor(birthdate, "select your birthdate");
-  } else {
-    //succes class
-    setSuccessFor(birthdate);
-  }
-
-  if (tournamentsValue === "") {
-    //show error
-    //add error class
-    setErrorFor(tournaments, "select a number");
-  } else {
-    //succes class
-    setSuccessFor(tournaments);
-  }
-
-  if (birthdateValue === "") {
-    //show error
-    //add error class
-    setErrorFor(birthdate, "select your birthdate");
-  } else {
-    //succes class
-    setSuccessFor(birthdate);
-  }
-
-  let radio = document.getElementsByName("location");
-  let ischecked_method = false;
-  for (let i = 0; i < radio.length; i++) {
-    if (radio[i].checked) {
-      ischecked_method = true;
-      document.getElementById("rad").innerHTML = "";
-      break;
-    } else {
-      //payment method button is not checked
-      document.getElementById("rad").innerHTML = "select your location";
-    }
-  }
-
-  if (!checkbox.checked) {
-    document.getElementById("term").innerHTML = "accept the terms";
-  } else {
-    document.getElementById("term").innerHTML = "";
-  }
-}*/
-
-function setErrorFor(input, message) {
+function setErrorFor(input) {
   const formControl = input.parentElement; // .form-control
-  const small = formControl.querySelector("small");
-  //add error message inside small
-
-  small.innerText = message;
   //add error class
   formControl.className = "form-control error";
 }
+
+
+//    SUCCESS
+
 
 function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = "form-control success";
 }
 
+
+//    EMAIL
+
+
 function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
     email
   );
 }
-
-//  RADIO onsubmit="return validate();"

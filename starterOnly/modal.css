@@ -161,7 +161,7 @@ main {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4);
+  background-color: rgb(255, 255, 255);
 }
 
 /*    ---------------------------   CONTAINER PRINCIPAL FOND NOIR   ---------------------------   */
@@ -690,7 +690,7 @@ footer {
 
 .form-control small {
   visibility: hidden;
-  font-size: 0.7em;
+  font-size: 0.5em;
   font-weight: normal;
 }
 
@@ -705,6 +705,7 @@ footer {
 .form-control.error input {
   border-color: red;
 }
+
 
 #rad {
   visibility: visible;

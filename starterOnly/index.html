@@ -141,7 +141,7 @@
               <div class="form-control">
                 <label>First name</label><br />
                 <input class="text-control" type="text" id="first" /><br />
-                <small>Error message</small>
+                <small id="firstNameError"></small>
               </div>
 
               <!-- ++++++++++++++++++++++++    INPUT NOM   ++++++++++++++++++++++++ -->
@@ -149,7 +149,7 @@
               <div class="form-control">
                 <label>Last name</label><br />
                 <input class="text-control" type="text" id="last" /><br />
-                <small>Error message</small>
+                <small id="lastNameError"></small>
               </div>
 
               <!-- ++++++++++++++++++++++++    INPUT EMAIL   ++++++++++++++++++++++++ -->
@@ -157,7 +157,7 @@
               <div class="form-control">
                 <label>Email</label><br />
                 <input class="text-control" type="text" id="email" /><br />
-                <small>Error message</small>
+                <small id="emailError"></small>
               </div>
 
               <!-- ++++++++++++++++++++++++    INPUT DATE DE NAISSANCE   ++++++++++++++++++++++++ -->
@@ -165,7 +165,7 @@
               <div class="form-control">
                 <label>Birthdate</label><br />
                 <input class="text-control" type="date" id="birthdate" /><br />
-                <small>Error message</small>
+                <small id="birthdateError"></small>
               </div>
 
               <!-- ++++++++++++++++++++++++    NOMBRE DE TOURNOIS   ++++++++++++++++++++++++ -->
@@ -180,7 +180,7 @@
                   min="0"
                   max="99"
                 />
-                <small>Error message</small>
+                <small id="tournamentError"></small>
               </div>
 
               <!-- ++++++++++++++++++++++++    PARAGRAPHE QUELLES VILLES   ++++++++++++++++++++++++ -->
@@ -302,8 +302,8 @@
                 </label>
                 <br />
                 <!-- ++++++++++++++++++++++++    PASSAGE A LA LIGNE ?   ++++++++++++++++++++++++ -->
-                <small id="term"></small>
-                <br />
+                
+                
 
                 <!-- ++++++++++++++++++++++++    CASE DE VALIDATION 2 HIDDEN   ++++++++++++++++++++++++ -->
 
@@ -322,9 +322,9 @@
                 </label>
 
                 <!-- ++++++++++++++++++++++++    PASSAGE A LA LIGNE ?   ++++++++++++++++++++++++ -->
-
+                
                 <br />
-
+                <small id="term"></small>
                 <!-- ++++++++++++++++++++++++    FIN DU CONTAINER CONDITIONS D'UTILISATEURS + NEWSLETTER   ++++++++++++++++++++++++ -->
               </div>
 
