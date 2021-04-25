@@ -87,7 +87,7 @@
 
           <p class="hero-text">
             Do you live to game? Our next gaming event is now accepting
-            reservations for players, but spot are limited.
+            reservations for players, but spots are limited.
           </p>
 
           <!-- ++++++++++++++++++++++++    BOUTON D'INSCRIPTION   ++++++++++++++++++++++++ -->
@@ -140,38 +140,38 @@
 
               <div class="form-control">
                 <label>First name</label><br />
-                <input class="text-control" type="text" id="first" /><br />
-                <small id="firstNameError"></small>
+                <input class="text-control" type="text" id="first" />
+                <p id="firstNameError"></p>
               </div>
 
               <!-- ++++++++++++++++++++++++    INPUT NOM   ++++++++++++++++++++++++ -->
 
               <div class="form-control">
                 <label>Last name</label><br />
-                <input class="text-control" type="text" id="last" /><br />
-                <small id="lastNameError"></small>
+                <input class="text-control" type="text" id="last" />
+                <p id="lastNameError"></p>
               </div>
 
               <!-- ++++++++++++++++++++++++    INPUT EMAIL   ++++++++++++++++++++++++ -->
 
               <div class="form-control">
                 <label>Email</label><br />
-                <input class="text-control" type="text" id="email" /><br />
-                <small id="emailError"></small>
+                <input class="text-control" type="text" id="email" />
+                <p id="emailError"></p>
               </div>
 
               <!-- ++++++++++++++++++++++++    INPUT DATE DE NAISSANCE   ++++++++++++++++++++++++ -->
 
               <div class="form-control">
                 <label>Birthdate</label><br />
-                <input class="text-control" type="date" id="birthdate" /><br />
-                <small id="birthdateError"></small>
+                <input class="text-control" type="date" id="birthdate" />
+                <p id="birthdateError"></p>
               </div>
 
               <!-- ++++++++++++++++++++++++    NOMBRE DE TOURNOIS   ++++++++++++++++++++++++ -->
 
               <div class="form-control">
-                <label>How many tournaments have you attended ?</label><br />
+                <label>How many tournaments have you attended ?</label>
                 <input
                   type="number"
                   class="text-control"
@@ -180,7 +180,7 @@
                   min="0"
                   max="99"
                 />
-                <small id="tournamentError"></small>
+                <p id="tournamentError"></p>
               </div>
 
               <!-- ++++++++++++++++++++++++    PARAGRAPHE QUELLES VILLES   ++++++++++++++++++++++++ -->
@@ -189,7 +189,7 @@
 
               <!-- ++++++++++++++++++++++++    DEBUT DU CONTAINER RADIO VILLES   ++++++++++++++++++++++++ -->
 
-              <div class="form-control">
+              <div id="form-control-radio" class="form-control">
                 <!-- ++++++++++++++++++++++++        NEW YORK   ++++++++++++++++++++++++ -->
 
                 <input
@@ -274,7 +274,7 @@
                   Portland</label
                 >
                 <br />
-                <small id="rad"></small>
+                <p id="rad"></p>
                 <!-- ++++++++++++++++++++++++        FIN DU CONTAINER RADIO VILLES   ++++++++++++++++++++++++ -->
               </div>
 
@@ -291,7 +291,7 @@
 
                 <!-- ++++++++++++++++++++++++    CONDITIONS D'UTILISATEURS   ++++++++++++++++++++++++ -->
 
-                <label class="checkbox2-label" for="checkbox1">
+                <label id="termOfUseMargin"class="checkbox2-label" for="checkbox1">
                   <!-- ++++++++++++++++++++++++        CASE VALIDATION   ++++++++++++++++++++++++ -->
 
                   <span class="checkbox-icon"></span>
@@ -324,13 +324,13 @@
                 <!-- ++++++++++++++++++++++++    PASSAGE A LA LIGNE ?   ++++++++++++++++++++++++ -->
                 
                 <br />
-                <small id="term"></small>
+                <p id="term"></p>
                 <!-- ++++++++++++++++++++++++    FIN DU CONTAINER CONDITIONS D'UTILISATEURS + NEWSLETTER   ++++++++++++++++++++++++ -->
               </div>
 
               <!-- ++++++++++++++++++++++++    SUBMIT BUTTON   ++++++++++++++++++++++++ -->
 
-              <input type="submit" class="btn-submit" value="go" />
+              <input type="submit" class="btn-submit" value="Go" />
 
               <!-- ++++++++++++++++++++++++    FIN BALISE FORM DES INPUTS   ++++++++++++++++++++++++ -->
             </form>

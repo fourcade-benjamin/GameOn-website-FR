@@ -5,7 +5,7 @@
   --font-slab: var(--font-default);
   --modal-duration: 0.8s;
   overflow-x: hidden;
-}
+  }
 * {
   box-sizing: border-box;
   margin: 0;
@@ -69,6 +69,7 @@ p {
 #hamburger {
   color: #fe142f;
   font-size: 1.3em;
+  font-weight: normal;
 }
 
 /*    ---------------------------   EVENT DETAILS    ---------------------------   */
@@ -157,7 +158,7 @@ main {
   position: fixed;
   z-index: 1;
   left: 0;
-  top: 0;
+  top: 10%;
   height: 100%;
   width: 100%;
   overflow: auto;
@@ -167,7 +168,7 @@ main {
 /*    ---------------------------   CONTAINER PRINCIPAL FOND NOIR   ---------------------------   */
 
 .content {
-  margin: 5% auto;
+  margin: 0 auto;
   width: 100%;
   max-width: 500px;
   animation-name: modalopen;
@@ -183,16 +184,16 @@ main {
 /*    ---------------------------   CONTAINER DES INPUTS   ---------------------------   */
 
 .modal-body {
-  padding: 15px 8%;
+  padding: 15px 7.5%;
   margin: 15px auto;
 }
 
 label {
   font-family: var(--font-default);
-  font-size: 17px;
+  font-size: 0.6em;
   font-weight: normal;
   display: inline-block;
-  margin-bottom: 11px;
+  margin-bottom: 0px;
 }
 
 input {
@@ -243,9 +244,10 @@ input[data-error]::after {
 .checkbox-label,
 .checkbox2-label {
   position: relative;
-  margin-left: 36px;
-  font-size: 12px;
+  margin-left: 30px;
+  font-size: 0.47em;
   font-weight: normal;
+  margin-bottom: 1px;
 }
 
 .checkbox-label .checkbox-icon,
@@ -253,15 +255,17 @@ input[data-error]::after {
   display: block;
   width: 20px;
   height: 20px;
-  border: 2px solid #279e7a;
-  border-radius: 50%;
+  border: 1px solid #ffffff;
+    border-radius: 50%;
   text-indent: 29px;
   white-space: nowrap;
   position: absolute;
-  left: -30px;
+  left: -25px;
   top: -1px;
   transition: 0.3s;
 }
+
+
 
 .checkbox-label .checkbox-icon::after,
 .checkbox2-label .checkbox-icon::after {
@@ -434,7 +438,7 @@ input[data-error]::after {
 
 .text-label {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 0.6em;
 }
 
 .hero-section {
@@ -479,10 +483,12 @@ input[data-error]::after {
 }
 
 .btn-signup {
+  font-family: "Dm sans";
   outline: none;
   text-transform: capitalize;
-  font-size: 1.3rem;
-  padding: 15px 23px;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 10px 25px;
   margin: 0;
   margin-top: 75px;
 }
@@ -585,12 +591,14 @@ footer {
 
   .hero-section > .btn-signup {
     width: 140px;
+    height: 30px;
     display: block;
     margin: 0;
-    padding: 10px 30px 8px 30px;
-    margin: 0 auto 0 auto;
+    padding: 2px 20px 0px 20px;
+    margin: 0 0 0 32%;
     font-size: 0.6em;
-    border-radius: 10px;
+
+    border-radius: 8px;
   }
 
   .test1 {
@@ -621,14 +629,41 @@ footer {
     padding-left: 0;
     margin-top: 30px;
     margin-bottom: 27px;
+    padding-right: 10px;
   }
 
   .copyrights {
     margin-top: 0;
     text-align: center;
     padding: 0;
-    font-size: 0.5em;
+    font-size: 0.45em;
   }
+
+  /*   CLOSE */
+
+  .close{
+    transform: scale(0.5);
+  }
+  .modal-body{
+    margin-top: 15px;
+  }
+
+  /*  GO  */
+  .btn-submit,
+.btn-signup {
+  padding: 5px 60px;
+  margin-top: 10px;
+}
+
+/* FORM CONTROL*/
+.label{
+  font-size: 0.8em;
+}
+
+
+.form-control{
+  font-size: 90%;
+}
 }
 
 /*    ---------------------------   BARRE DE NAVIGATION REPONSIVE    ---------------------------   */
@@ -688,7 +723,7 @@ footer {
 
 /*    ---------------------------   JAVA FORM   ---------------------------   */
 
-.form-control small {
+.form-control p {
   visibility: hidden;
   font-size: 0.5em;
   font-weight: normal;
@@ -697,7 +732,7 @@ footer {
 .form-control.success input {
   border-color: rgb(3, 240, 15);
 }
-.form-control.error small {
+.form-control.error p {
   visibility: visible;
   color: red;
 }
@@ -715,4 +750,13 @@ footer {
 #term {
   visibility: visible;
   color: red;
+}
+#termOfUseMargin{
+  margin-bottom: 0;
+}
+#form-control-radio{
+  padding-right: 13px;
+  max-width: 400px;
+  width: 100%;
+
 }
