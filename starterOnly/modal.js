@@ -14,7 +14,7 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-
+const body = document.getElementsByTagName("body");
 //    LAUNCH MODAL EVENT
 
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -25,7 +25,7 @@ function launchModal() {
 	modalbg.style.display = "block";
 }
 
-//    CLOSE
+//    CLOSE CROSS
 
 let closer = document.getElementById("closer");
 
@@ -33,10 +33,8 @@ closer.onclick = function () {
 	modalbg.style.display = "none";
 };
 
-/*    CLOSE 2
+//    BTN CLOSE THANKS
 
-let closer2 = document.getElementById("closer2");
-*/
 const btnfnl = document.getElementById("valide2");
 btnfnl.onclick = function () {
 	modalbg.style.display = "none";
@@ -183,15 +181,33 @@ function validate() {
 const test = document.getElementById("test");
 function x() {
 	if (validate()) {
-		form.innerText = "Thank you for submitting your registration details";
-		test.style.height = "650px";
-		btnfnl.style.visibility = "visible";
-		form.style.marginTop = "50%";
-		form.style.fontSize = "1.3em";
-		form.style.textAlign = "center";
-		btnfnl.style.marginTop = "75%";
+		if (media.matches) {
+			form.innerText = "Thank you for submitting your registration details";
+			test.style.height = "90%";
+			form.style.marginTop = "50%";
+			form.style.fontSize = "1.3em";
+			form.style.textAlign = "center";
+			btnfnl.style.visibility = "visible";
+			btnfnl.style.marginTop = "75%";
+		} else {
+			form.innerText = "Thank you for submitting your registration details";
+			test.style.height = "120%";
+			form.style.marginTop = "75%";
+			form.style.paddingTop = "30%";
+			form.style.fontSize = "1.5em";
+			form.style.padding = "0 30px";
+			form.style.textAlign = "center";
+			btnfnl.style.visibility = "visible";
+			btnfnl.style.marginTop = "70%";
+			btnfnl.style.marginBottom = "15%";
+			btnfnl.style.fontWeight = "bold";
+		}
 	}
 }
+
+//		MEDIA QUERIES 1025 PX
+
+const media = window.matchMedia("(max-width: 1030px)");
 
 //    ERROR
 
