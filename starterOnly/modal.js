@@ -14,7 +14,11 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const body = document.getElementsByTagName("body");
+const body = document.getElementById("body");
+const hero = document.getElementById("hero");
+const logo = document.getElementById("logo");
+const logoBox = document.getElementById("logoBox");
+
 //    LAUNCH MODAL EVENT
 
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -23,6 +27,13 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 function launchModal() {
 	modalbg.style.display = "block";
+	if (media.matches) {
+		logo.style.display = "block";
+		logo.style.width = "130px";
+		logoBox.style.position = "relative";
+		logoBox.style.bottom = "5px";
+		hero.style.display = "none";
+	}
 }
 
 //    CLOSE CROSS
@@ -31,6 +42,14 @@ let closer = document.getElementById("closer");
 
 closer.onclick = function () {
 	modalbg.style.display = "none";
+	if (media.matches) {
+		hero.style.display = "block";
+		logoBox.style.position = "static";
+		logo.style.width = "103px";
+	} else {
+		hero.style.display = "grid";
+		logo.style.width = "280px";
+	}
 };
 
 //    BTN CLOSE THANKS
@@ -38,6 +57,14 @@ closer.onclick = function () {
 const btnfnl = document.getElementById("valide2");
 btnfnl.onclick = function () {
 	modalbg.style.display = "none";
+	if (media.matches) {
+		logo.style.width = "103px";
+		hero.style.display = "block";
+		logoBox.style.position = "static";
+	} else {
+		hero.style.display = "grid";
+		logo.style.width = "280px";
+	}
 };
 
 //    FORM_CONST
@@ -179,19 +206,21 @@ function validate() {
 
 //    THANKS (FUNCTION ?)
 const test = document.getElementById("test");
+
 function x() {
 	if (validate()) {
 		if (media.matches) {
 			form.innerText = "Thank you for submitting your registration details";
-			test.style.height = "90%";
+			test.style.height = "87vh";
 			form.style.marginTop = "50%";
 			form.style.fontSize = "1.3em";
 			form.style.textAlign = "center";
 			btnfnl.style.visibility = "visible";
-			btnfnl.style.marginTop = "75%";
+			btnfnl.style.marginTop = "70%";
+			btnfnl.style.marginBottom = "5vh";
 		} else {
 			form.innerText = "Thank you for submitting your registration details";
-			test.style.height = "120%";
+			test.style.height = "100vh";
 			form.style.marginTop = "75%";
 			form.style.paddingTop = "30%";
 			form.style.fontSize = "1.5em";
@@ -202,12 +231,16 @@ function x() {
 			btnfnl.style.marginBottom = "15%";
 			btnfnl.style.fontWeight = "bold";
 		}
+		if (media2.matches) {
+			btnfnl.style.marginTop = "35%";
+		}
 	}
 }
 
 //		MEDIA QUERIES 1025 PX
 
 const media = window.matchMedia("(max-width: 1030px)");
+const media2 = window.matchMedia("(max-width: 320px)");
 
 //    ERROR
 
